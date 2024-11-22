@@ -1,0 +1,29 @@
+{
+    "name": "chat-application",
+    "version": "1.0.0",
+    "description": "random people chat application",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "set APP_VERSION=%npm_package_version% && npm run build && node dist/index.js",
+        "dev": "set APP_VERSION=%npm_package_version% && nodemon --watch src/**/*.ts --exec ts-node src/index.ts",
+        "devmac": "APP_VERSION=$npm_package_version nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.9.1",
+        "@types/ws": "^8.5.13",
+        "typescript": "^5.6.3",
+        "nodemon": "^3.1.0",
+        "swagger": "^0.7.5",
+        "swagger-ui-express": "^5.0.0",
+        "ts-node": "^10.9.2",
+        "tslint": "^6.1.3"
+    },
+    "dependencies": {
+        "express": "^4.21.1",
+        "ws": "^8.18.0"
+    }
+}
