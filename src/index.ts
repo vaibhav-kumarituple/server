@@ -62,8 +62,10 @@ wss.on("connection", (ws: ExtendedWebSocket) => {
     });
 });
 
-// Serve static files
-app.use(express.static("public"));
+// Root route to indicate server is running (for testing purposes)
+app.get("/", (req, res) => {
+    res.send("WebSocket server is running.");
+});
 
 // Start the server
 const PORT = 3000;
